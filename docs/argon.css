@@ -3355,9 +3355,11 @@ input[type=submit].btn-block {
 .fade:not(.show) {
     opacity: 0
 }
-.tab-pane.active .tab-pane.fade{
-  opacity: 1;
+
+.tab-pane.active .tab-pane.fade {
+    opacity: 1;
 }
+
 .collapse:not(.show) {
     display: none
 }
@@ -11127,8 +11129,8 @@ a.text-darker:hover {
 
 @media print {
     *,
-    ::after,
-    ::before {
+     ::after,
+     ::before {
         box-shadow: none!important;
         text-shadow: none!important
     }
@@ -12557,6 +12559,10 @@ a.text-cyan:hover {
 
 .text-white {
     color: #fff!important
+}
+
+.text-white {
+    color: rgb(0, 0, 0)!important
 }
 
 a.text-white:focus,
@@ -18376,9 +18382,10 @@ pre>code.highlight {
 .ct-footer-links li+li {
     margin-left: 1rem
 }
-.docs .tab-content{
-  padding: 1.25rem;
-border: 1px solid #e6ecf1;
-border-radius: .25rem;
-background-color: #f5f7f9;
+
+.docs .tab-content {
+    padding: 1.25rem;
+    border: 1px solid #e6ecf1;
+    border-radius: .25rem;
+    background-color: #f5f7f9;
 }
