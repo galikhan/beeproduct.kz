@@ -12,7 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { GreetingComponent } from './greeting/greeting.component';
 
 const routes: Routes = [
-  { path: 'home',         component: HomeComponent },
+  { path: '',         component: HomeComponent },
   { path: 'cart',         component: CartComponent },
   { path: 'user-profile', component: ProfileComponent },
   { path: 'register', component: SignupComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: false
     })
   ],
   exports: [
