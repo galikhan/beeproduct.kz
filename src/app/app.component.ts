@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { OrderService } from './services/order.service';
 
 let lastScrollTop = 0;
 const delta = 5;
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
         private router: Router,
         @Inject(DOCUMENT) private document: any,
         private element: ElementRef,
-        public location: Location) { }
+        public location: Location,
+        public service: OrderService) { }
     @HostListener('window:scroll', ['$event'])
     hasScrolled() {
 
@@ -59,6 +61,9 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        //init
+        this.service.initCookie().subscribe(result => { console.log('init cookie', result); });
 
         const navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {

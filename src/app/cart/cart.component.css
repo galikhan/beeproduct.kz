@@ -1,0 +1,11 @@
+.amount-input {
+    width: 30px;
+} 
+.plus-btn {
+    margin-left: 0.5rem;
+}
+
+
+.input-group-alternative .form-control, .input-group-alternative .input-group-text {
+    width: 146px;
+}

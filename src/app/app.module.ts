@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -16,6 +16,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CustomInterceptor } from './intercepters/custom.interceptor';
+import { GreetingComponent } from './greeting/greeting.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { CartComponent } from './cart/cart.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    GreetingComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,15 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

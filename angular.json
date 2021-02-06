@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "argon-design-system-angular": {
+    "beeproduct": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/argon-design-system-angular",
+            "outputPath": "dist/beeproduct",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -55,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "argon-design-system-angular:build"
+            "browserTarget": "beeproduct:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "argon-design-system-angular:build:production"
+              "browserTarget": "beeproduct:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "argon-design-system-angular:build"
+            "browserTarget": "beeproduct:build"
           }
         },
         "test": {
@@ -100,7 +100,7 @@
         }
       }
     },
-    "argon-design-system-angular-e2e": {
+    "beeproduct-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -108,11 +108,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "argon-design-system-angular:serve"
+            "devServerTarget": "beeproduct:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "argon-design-system-angular:serve:production"
+              "devServerTarget": "beeproduct:serve:production"
             }
           }
         },
@@ -128,7 +128,7 @@
       }
     }
   },
-  "defaultProject": "argon-design-system-angular",
+  "defaultProject": "beeproduct",
   "cli": {
     "analytics": false
   }

@@ -275,7 +275,7 @@ $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              inherit !default;
+$headings-color:              $black;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
@@ -717,7 +717,8 @@ $card-border-radius:                $border-radius !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg:                       rgba($black, .03) !default;
-$card-bg:                           $white !default;
+$card-bg:                           $gray-400 !default;
+// $card-bg:                           $white !default;
 
 $card-img-overlay-padding:          1.25rem !default;
 
