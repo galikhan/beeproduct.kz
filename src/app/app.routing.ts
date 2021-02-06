@@ -27,7 +27,10 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: false
+      useHash: false,
+      anchorScrolling: 'enabled',
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: 'enabled'
     })
   ],
   exports: [
