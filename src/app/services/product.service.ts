@@ -14,4 +14,20 @@ export class ProductService {
     return this.http.get(environment.apiFullUrl + '/product/all');
   }
 
+  findById(productId: number): Observable<any> {
+    return this.http.get(environment.apiFullUrl + '/private/product/' + productId);
+  }
+
+  create(product): Observable<any> {
+    return this.http.post(environment.apiFullUrl + '/private/product/', product);
+  }
+
+  update(product): Observable<any> {
+    return this.http.put(environment.apiFullUrl + '/private/product/', product);
+  }
+
+  delete(productId): Observable<any> {
+    return this.http.delete(environment.apiFullUrl + '/private/product/' + productId);
+  }
+
 }

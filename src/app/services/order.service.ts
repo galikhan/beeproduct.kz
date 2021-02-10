@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class OrderService {
-
   constructor(private http: HttpClient) { }
 
   initCookie(): Observable<any> {
@@ -36,6 +35,10 @@ export class OrderService {
 
   startOrder(address): Observable<any> {
     return this.http.post(environment.apiFullUrl + '/order/started', address);
+  }
+
+  getAll(page: number): Observable<any> {
+    return this.http.get(environment.apiFullUrl + '/private/order/all?page=' + page);
   }
 
 
