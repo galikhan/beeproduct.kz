@@ -1,0 +1,62 @@
+<p>Заказы</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th>Номер</th>
+            <th>Дата заказа</th>
+            <th>покупатель</th>
+            <th>Заказ</th>
+            <th>Цена</th>
+            <th>статус</th>
+            <!-- <th></th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders;let index = index; let totalPrice">
+            <td class="text-center">{{index+1}}</td>
+            <td>{{ order.id }}</td>
+            <td>{{ order.orderTime | date:['dd.MM.yyyy hh:mm']}}</td>
+            <td>{{ order.user }}</td>
+            <td>
+               <span *ngFor="let product of order.products">{{ product.amount }} кол-во, {{ product.title }} <br></span> 
+            </td>
+            <td>
+               <span>{{ countTotalPrice(order.products) }} <br></span> 
+            </td>
+            <td>{{ order.status }}</td>
+            <!-- <td class="td-actions text-right">
+              <button routerLink="/admin/products/edit/1"  type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm " data-original-title="" title="">
+                <i class="ni ni-settings-gear-65 pt-1"></i>
+              </button>
+              <button (click)="delete(production.id)" type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title="" title="">
+                <i class="ni ni-fat-remove pt-1"></i>
+                </button>
+            </td> -->
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <i class="fa fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li> -->
+        <li class="page-item" *ngFor="let page of pages">
+            <a class="page-link" [routerLink]="['/admin/orders']" [queryParams]="{page:page}">{{ page }}</a>
+        </li>
+        <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <i class="fa fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </li> -->
+    </ul>
+</nav>

@@ -1,0 +1,32 @@
+<main>
+    <section class="section section-shaped section-lg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-black">
+                    <div class="card">
+                        <h4 class="card-header">Админ <button class="btn-primary btn-sm" (click)="logout()">выход</button></h4>
+                        <div class="card-body">
+                            <div class="nav-wrapper">
+                                <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text"
+                                    role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0" routerLink="/admin/orders" ><i class="ni ni-cloud-upload-96 mr-2"></i>Заказы</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0" routerLink="/admin/products" ><i class="ni ni-bell-55 mr-2"></i>Продукты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <div class="card shadow"> -->
+                            <!-- <div class="card-body"> -->
+                                <router-outlet></router-outlet>
+                            <!-- </div> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -41,5 +41,7 @@ export class OrderService {
     return this.http.get(environment.apiFullUrl + '/private/order/all?page=' + page);
   }
 
-
+  getCount(): Observable<any> {
+    return this.http.get(environment.apiFullUrl + '/private/order/count');
+  }
 }
