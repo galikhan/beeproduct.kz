@@ -1,4 +1,8 @@
+
 <p><button routerLink="/admin/products" class="btn-primary btn-sm"><- вернутся</button></p>
+<div *ngIf="product.id">
+    <app-single-fileupload [container]="product.id"></app-single-fileupload>
+</div>
 <form>
     <div class="row text-black">
         <div class="col-md-8">

@@ -1,0 +1,18 @@
+
+<hr>
+<div *ngIf="filepath">
+    <img [src]="filepath" />
+</div>
+<ul>  
+    <li *ngFor="let file of files">  
+        <span id="file-label">  
+           {{file.progress}}% - {{file.data.name}}               
+        </span> 
+    </li>  
+</ul>  
+
+<button class="btn btn-primary" color="warn" (click)="onClick()">Загрузить</button>  
+
+<input type="file" #fileUpload id="fileUpload" name="fileUpload"accept="image/*" style="display:none" />
+
+<hr>

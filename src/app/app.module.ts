@@ -25,6 +25,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
+import { SingleFileuploadComponent } from './single-fileupload/single-fileupload.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
     OrdersComponent,
     ProductsComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
+    SingleFileuploadComponent
   ],
   imports: [
     BrowserModule,
