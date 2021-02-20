@@ -59,7 +59,7 @@
                                         <h6 class="text-uppercase">{{product.title}} - {{product.price}} тенге</h6>
                                         <!-- <h6 class="text-uppercase">Алтайский мед 1 литр - 2500 тенге</h6> -->
                                         <p class="description mt-3"></p>
-                                        <img src="./assets/img/theme/honeycomb.png" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                                        <img [src]="'/img/' + product.avatar" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
                                         <button (click)="addToCart(product.id)" class="btn btn-warning float-right mt-4">купить</button>
                                     </div>
                                 </div>

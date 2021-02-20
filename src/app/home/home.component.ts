@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileuploadService } from '../services/fileupload.service';
 import { OrderService } from '../services/order.service';
 import { ProductService } from '../services/product.service';
 
@@ -21,14 +22,15 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private service: OrderService,
-        private productSerice: ProductService
-        ) { }
+        private productSerice: ProductService,
+        private fileService: FileuploadService
+    ) { }
 
     ngOnInit() {
         this.productSerice.findAll().subscribe(result => {
             this.products = result;
         });
-     }
+    }
 
     addToCart(productId): void {
         console.log('productId', productId);
