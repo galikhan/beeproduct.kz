@@ -54,8 +54,13 @@
                                     <p class="description mt-3"></p>
                                     <img [src]="'/img/' + product.avatar"
                                         class="rounded-circle img-center img-fluid shadow shadow-lg--hover">
-                                    <button (click)="addToCart(product.id)"
-                                        class="btn btn-warning float-right mt-4">купить</button>
+                                    
+                                    <div class="m-auto w-230">
+                                        <div class="buttons mt-4">
+                                            <a routerLink="/cart" class="btn btn-secondary">Корзина</a>
+                                            <button (click)="addToCart(product.id)" class="btn btn-warning">купить</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
