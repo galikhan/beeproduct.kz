@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
 import { CartComponent } from './cart/cart.component';
 import { GreetingComponent } from './greeting/greeting.component';
 import { AdminComponent } from './admin/admin.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'user-profile', component: ProfileComponent },
   { path: 'register', component: SignupComponent },
-  { path: 'landing', component: LandingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'greeting', component: GreetingComponent },
   {

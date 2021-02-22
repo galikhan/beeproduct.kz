@@ -22,9 +22,9 @@
             <td>{{ product.description }}</td>
             <td>{{ product.price }}</td>
             <td class="td-actions text-right">
-              <button routerLink="/admin/products/edit/1"  type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm " data-original-title="" title="">
+              <a [routerLink]="'/admin/products/edit/' + product.id"  type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm " data-original-title="" title="">
                 <i class="ni ni-settings-gear-65 pt-1"></i>
-              </button>
+              </a>
               <button (click)="delete(production.id)" type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title="" title="">
                 <i class="ni ni-fat-remove pt-1"></i>
                 </button>

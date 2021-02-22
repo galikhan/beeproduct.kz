@@ -10,8 +10,9 @@
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a [routerLink]="['/home']">
-                            <img src="./assets/img/brand/blue.png">
+                        <a routerLink="/cart" class="btn btn-secondary btn-icon">
+                            <span class="btn-inner--icon"> <i class="ni ni-cart mr-2"></i> </span>
+                            <span class="nav-link-inner--text">Корзина</span>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -38,16 +39,14 @@
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/beeproduct_kz" target="_blank" data-toggle="tooltip" title="Подписывайтесь на наши инстаграм">
+                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/altay_baly" target="_blank" data-toggle="tooltip" title="Подписывайтесь на наши инстаграм">
                         <i class="fa fa-instagram"></i>
                         <span class="nav-link-inner--text d-lg-none">Instagram</span>
                     </a>
                 </li>
                 <li class="nav-item d-none d-lg-block ml-lg-4">
                     <a routerLink="/cart" class="btn btn-secondary btn-icon">
-                        <span class="btn-inner--icon">
-              <i class="ni ni-cart mr-2"></i>
-            </span>
+                        <span class="btn-inner--icon"> <i class="ni ni-cart mr-2"></i> </span>
                         <span class="nav-link-inner--text">Корзина</span>
                     </a>
                 </li>
