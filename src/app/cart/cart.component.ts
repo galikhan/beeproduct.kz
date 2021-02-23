@@ -90,14 +90,19 @@ export class CartComponent implements OnInit {
 
   calculateCart(): void {
     this.productPriceTotal = this.calculateProductPriceTotal(this.productInCart);
-    this.deliveryPrice = this.calculateDeliveryPrice(this.productPriceTotal);
-    this.totalPrice = this.productPriceTotal + this.deliveryPrice;
+    if (this.productPriceTotal === 0) {
+      this.deliveryPrice = 0;
+      this.totalPrice = 0;
+    } else {
+      this.deliveryPrice = this.calculateDeliveryPrice(this.productPriceTotal);
+      this.totalPrice = this.productPriceTotal + this.deliveryPrice;
+    }
   }
 
   startOrder(): void {
     this.service.startOrder(this.address).subscribe(result => {
-        console.log('result', result);
-        this.router.navigate(['/greeting']);
+      console.log('result', result);
+      this.router.navigate(['/greeting']);
     });
   }
 

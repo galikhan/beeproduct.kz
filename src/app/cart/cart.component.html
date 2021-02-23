@@ -2,60 +2,67 @@
     <section class="section section-shaped section-lg text-black">
         <div class="container pt-md">
             <div class="row">
+                <div class="col-md-12">
+                    <div><a routerLink="/" fragment="want-buy">Выбрать продукт</a></div>
+                </div>
+            </div>
+            <div class="row">
 
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="text-center">Корзина</h6>
+
                             <div *ngIf="productInCart.length == 0">
-                                <div class="text-center">корзина пуста, <a routerLink="/home">выберите продукты</a></div>
+                                <div class="text-center">корзина пуста, <a routerLink="/" fragment="want-buy">выберите
+                                        продукты</a></div>
                             </div>
 
                             <div *ngIf="productInCart.length > 0">
-                                <div *ngFor="let product of productInCart">
-                                    <div class="row border-bottom mb-2" *ngIf="!product.removed">
-                                        <div id="cart" class="col-5">
-                                            <button class="btn btn-sm btn-warning"
-                                                (click)="remove(product);product.removed=true;this.calculateCart()">
-                                                <i class="ni ni-fat-remove"></i>
-                                            </button>
-                                            {{ product.title }}
-                                        </div>
-                                        <div class="col-3">
-                                            {{ product.amount * product.price }}
-                                        </div>
-                                        <div class="col-4">
-                                            <button class="btn btn-sm btn-default"
-                                                (click)="product.amount = decrement(product.amount);calculateCart(); updateProductAmount(product.id, product.amount);">
-                                                <i class="ni ni-fat-delete"></i>
-                                            </button>
 
-                                            <span>{{ product.amount }}</span>
-                                            <!-- <input class="amount-input" min="1" max="10" readonly type="text" [(ngModel)]="product.amount" /> -->
+                                <table>
+                                    <tbody>
+                                        <ng-container *ngFor="let product of productInCart">
+                                            <tr class="border-bottom pb-2" *ngIf="!product.removed">
 
-                                            <button class="btn btn-sm btn-default plus-btn "
-                                                (click)="product.amount = increment(product.amount); calculateCart(); updateProductAmount(product.id, product.amount);">
-                                                <i class="ni ni-fat-add"></i>
-                                            </button>
-                                        </div>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"
+                                                        (click)="remove(product);product.removed=true;calculateCart()">
+                                                        <i class="ni ni-fat-remove"></i>
+                                                    </button>
+                                                </td>
 
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5">
-                                        <div class="border-bottom">Общая сумма</div>
-                                        <div class="border-bottom">Доставка</div>
-                                        <div class="border-bottom">Итог</div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="border-bottom">{{productPriceTotal}}</div>
-                                        <div class="border-bottom">{{deliveryPrice}}</div>
-                                        <div class="border-bottom"><strong>{{totalPrice}}</strong></div>
-
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
+                                                <td>
+                                                    <div class="hide-on-overflow">{{ product.title }}</div>
+                                                </td>
+                                                <td>{{ product.amount * product.price }}</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-default"
+                                                        (click)="product.amount = decrement(product.amount);calculateCart(); updateProductAmount(product.id, product.amount);">
+                                                        <i class="ni ni-fat-delete"></i>
+                                                    </button>
+                                                </td>
+                                                <td><span>{{ product.amount }}</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-default plus-btn "
+                                                        (click)="product.amount = increment(product.amount); calculateCart(); updateProductAmount(product.id, product.amount);">
+                                                        <i class="ni ni-fat-add"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+                                        <tr></tr>
+                                        <tr>
+                                            <td></td><td  class="border-bottom">Всего</td><td  class="border-bottom" colspan="4">{{productPriceTotal}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td class="border-bottom">Доставка</td><td class="border-bottom" colspan="4">{{deliveryPrice}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td>Итог</td><td colspan="4">{{totalPrice}}</td>
+                                        </tr>
+                                </tbody>
+                                </table>
                             </div>
 
                         </div>

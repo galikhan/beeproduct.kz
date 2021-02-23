@@ -62,9 +62,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
 
-        //init
-        this.service.initCookie().subscribe(result => { console.log('init cookie', result); });
-
         const navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {

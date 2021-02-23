@@ -7,3 +7,9 @@
 .w-230 {
     width: 230px;
 }
+
+.hide-on-overflow {
+    width: 145px;
+    height: 20px;
+    overflow: hidden;
+}
